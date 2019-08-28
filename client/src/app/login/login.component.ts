@@ -10,6 +10,8 @@ import { __core_private_testing_placeholder__ } from '@angular/core/testing';
 export class LoginComponent implements OnInit {
 
   public loginForm : any;
+  public loginErrors : String =  null;
+  public loginSuccess : String =  null;
 
   constructor(private authServ : AuthService) { }
 
@@ -23,8 +25,13 @@ export class LoginComponent implements OnInit {
     console.log(this.loginForm)
     this.authServ.login(this.loginForm).subscribe( data => {
       console.log(data);
-      let results = data === true ? "Successfully logged in user..." : "Failed to log in..."
-      console.log(results)
+      this.resetAlerts();
+      data === true ? this.loginSuccess = "Successfully logged in user..." : this.loginErrors =  "Failed to log in..."
+      
     });
+  }
+  resetAlerts(){
+    this.loginErrors = null;
+    this.loginSuccess = null;
   }
 }

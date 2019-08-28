@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const SECRET = 'VERY_SECRET_KEY!';
 const randtoken = require('rand-token');
 const refreshTokens = {};
-
+    
 module.exports = {
     'login' : function(req, res){
         User.findOne({'email': req.body.email}, (err, user) => {

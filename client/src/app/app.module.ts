@@ -7,10 +7,12 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from './auth.service';
 import { HttpClientModule } from '@angular/common/http';
+import { SecretComponent } from './secret/secret.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    SecretComponent
   ],
   imports: [
     BrowserModule,

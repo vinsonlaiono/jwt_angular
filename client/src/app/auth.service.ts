@@ -38,18 +38,7 @@ export class AuthService {
   private storeTokens(tokens: Tokens) {
     localStorage.setItem(this.JWT_TOKEN, tokens.jwt);
     localStorage.setItem(this.REFRESH_TOKEN, tokens.refreshToken);
+    console.log("Refresh Token: ", localStorage.getItem(this.REFRESH_TOKEN))
+    console.log("JWT Token: ", localStorage.getItem(this.JWT_TOKEN));
   }
- 
-  // login(user){
-  //   console.log("Now in Authservice")
-  //   console.log(`${config.apiUrl}/api/authenticate`)
-  //   let headers = new HttpHeaders();
-  //     headers.set("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS");
-  //     headers.set("Access-Control-Allow-Origin", "*");
-  //     headers.set("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With, Content-Length, Accept, Origin,");
-  //     headers.set("Access-Control-Allow-Credentials", "true");
-  //     headers.set('Cache-Control', 'no-cache');
-  //     headers.set('Content-Type', 'application/json')
-  //   return this._http.post(`${config.apiUrl}/api/users/new`, user, {headers:headers})
-  // }
 }
