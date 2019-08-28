@@ -25,5 +25,12 @@ module.exports = {
                 }
             }
         })
+    },
+    'logout' : function(req, res){
+        const refreshToken = req.body.refreshToken;
+        if (refreshToken in refreshTokens) { 
+            delete refreshTokens[refreshToken];
+        } 
+        res.sendStatus(204);
     }
 }

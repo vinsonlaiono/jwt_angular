@@ -20,6 +20,9 @@ module.exports = function(app){
     app.post('/login', (req, res) => {
         process.login(req, res);
     })
+    app.post('/logout', (req, res) => {
+        process.logout(req, res);
+    })
 
 
     // Using ng serve instead

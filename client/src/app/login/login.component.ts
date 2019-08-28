@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { __core_private_testing_placeholder__ } from '@angular/core/testing';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -13,7 +15,10 @@ export class LoginComponent implements OnInit {
   public loginErrors : String =  null;
   public loginSuccess : String =  null;
 
-  constructor(private authServ : AuthService) { }
+  constructor(
+    private authServ : AuthService,
+    private _router : Router
+    ) { }
 
   ngOnInit() {
     this.loginForm ={
@@ -27,6 +32,7 @@ export class LoginComponent implements OnInit {
       console.log(data);
       this.resetAlerts();
       data === true ? this.loginSuccess = "Successfully logged in user..." : this.loginErrors =  "Failed to log in..."
+      if(data) this._router.navigate(['/secret'])
       
     });
   }

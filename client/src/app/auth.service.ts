@@ -30,6 +30,24 @@ export class AuthService {
           return of(false);
         }));
   }
+  logOutUser() {
+    return this._http.post<any>(`${config.apiUrl}/logout`, {
+      'refreshToken': this.getRefreshToken()
+    }).pipe(
+      tap(() => this.doLogoutUser()),
+      mapTo(true),
+      catchError(error => {
+        alert(error.error);
+        return of(false);
+      }));
+  }
+
+  isLoggedIn() {
+    return !!this.getJwtToken();
+  }
+  getJwtToken() {
+    return localStorage.getItem(this.JWT_TOKEN);
+  }
 
   private doLoginUser(username: string, tokens: Tokens) {
     this.loggedUser = username;
@@ -38,7 +56,17 @@ export class AuthService {
   private storeTokens(tokens: Tokens) {
     localStorage.setItem(this.JWT_TOKEN, tokens.jwt);
     localStorage.setItem(this.REFRESH_TOKEN, tokens.refreshToken);
-    console.log("Refresh Token: ", localStorage.getItem(this.REFRESH_TOKEN))
-    console.log("JWT Token: ", localStorage.getItem(this.JWT_TOKEN));
   }
+  private getRefreshToken() {
+    return localStorage.getItem(this.REFRESH_TOKEN);
+  }
+  private doLogoutUser() {
+    this.loggedUser = null;
+    this.removeTokens();
+  }
+  private removeTokens() {
+    localStorage.removeItem(this.JWT_TOKEN);
+    localStorage.removeItem(this.REFRESH_TOKEN);
+  }
+  
 }
