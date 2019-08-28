@@ -10,15 +10,19 @@ module.exports = function(app){
         res.json({'message': 'got user'});
     });
 
-    app.post('/api/user/new', (req, res) => {
+    app.post('/api/users/new', (req, res) => {
         apiTest.createNewUser(req, res);
     })
     app.get('/api/users', (req, res) =>{
         apiTest.getAllUsers(req, res);
     })
 
+    app.post('/login', (req, res) => {
+        process.login(req, res);
+    })
 
 
+    // Using ng serve instead
     // app.all("*", (req, res, next) => {
     //     res.sendFile(path.resolve("./client/dist/client/index.html"))
     // });
