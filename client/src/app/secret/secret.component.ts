@@ -19,10 +19,10 @@ export class SecretComponent implements OnInit {
     console.log("Logging out...")
     this.authService.logOutUser().subscribe( success => {
       if (success) {
+        console.log("Successfully logged out user...")
         this._router.navigate(['/login']);
       }
     })
-    
   }
 
 }
