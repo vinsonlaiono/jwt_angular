@@ -20,7 +20,7 @@ export class SecretComponent implements OnInit {
     this.authService.logOutUser().subscribe( success => {
       if (success) {
         console.log("Successfully logged out user...")
-        this._router.navigate(['/login']);
+        this._router.navigate(['/']);
       }
     })
   }

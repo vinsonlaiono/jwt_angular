@@ -1,0 +1,24 @@
+.social-logos i, .social-logos p{
+    display: block;
+    text-align:center;
+    
+    display:block;
+    text-align:center;
+}
+.social-logos i{
+    font-size: 70px;
+}
+.social-logos {
+    display: inline-block;
+    text-align: center;
+    margin-right: 20px;
+}
+.social{
+    text-align: center;
+}
+.social-logos a {
+    text-decoration: none;
+}
+.navbar{
+    background-color: #304a63
+}

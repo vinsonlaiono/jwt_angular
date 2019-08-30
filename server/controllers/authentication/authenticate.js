@@ -32,5 +32,20 @@ module.exports = {
             delete refreshTokens[refreshToken];
         } 
         res.sendStatus(204);
+    },
+    'refresh' : function(req, res){
+        const refreshToken = req.body.refreshToken;
+    
+        if (refreshToken in refreshTokens) {
+            const user = {
+            'email': refreshTokens[refreshToken],
+            'role': 'admin'
+            }
+            const token = jwt.sign(user, SECRET, { expiresIn: 600 });
+            res.json({jwt: token})
+        }
+        else {
+            res.sendStatus(401);
+        }
     }
 }

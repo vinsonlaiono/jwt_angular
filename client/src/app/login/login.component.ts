@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
       console.log(data);
       this.resetAlerts();
       data === true ? this.loginSuccess = "Successfully logged in user..." : this.loginErrors =  "Failed to log in..."
-      if(data) this._router.navigate(['/secret'])
+      if(data) this._router.navigate(['/secret', 'home'])
       
     });
   }
