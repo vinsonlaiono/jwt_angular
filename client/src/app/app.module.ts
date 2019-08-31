@@ -9,11 +9,19 @@ import { AuthService } from './auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { SecretComponent } from './secret/secret.component';
 import { AuthGuardService } from './guards/auth-guard.service';
+import { JobsComponent } from './components/jobs/jobs.component';
+import { HomeNavComponent } from './components/home-nav/home-nav.component';
+import { SettingsComponent } from './components/settings/settings.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SecretComponent
+    SecretComponent,
+    JobsComponent,
+    HomeNavComponent,
+    SettingsComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

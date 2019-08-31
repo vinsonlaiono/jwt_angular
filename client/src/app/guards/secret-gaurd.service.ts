@@ -14,6 +14,7 @@ export class SecretGaurdService implements CanActivate{
   }
   canLoad() {
     if (!this.authService.isLoggedIn()) {
+      // if user is not logged in
       this.router.navigate(['/']);
     }
     return this.authService.isLoggedIn();

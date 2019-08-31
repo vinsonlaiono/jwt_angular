@@ -4,17 +4,27 @@ import { LoginComponent } from './login/login.component';
 import { SecretComponent } from './secret/secret.component';
 import { AuthGuardService } from './guards/auth-guard.service';
 import { SecretGaurdService } from './guards/secret-gaurd.service';
+import { JobsComponent } from './components/jobs/jobs.component';
+import { HomeNavComponent } from './components/home-nav/home-nav.component';
+import { SettingsComponent } from './components/settings/settings.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  // { path: '', pathMatch: 'full', redirectTo: '/login' },
-  { path: '', component: LoginComponent, canActivate: [AuthGuardService] },
-  { path: 'secret', canActivate: [SecretGaurdService], children: [
-    { path: 'home', component: SecretComponent }
-  ] }
-  // { path: 'secret', component: SecretComponent }
+  { path: '', component: LoginComponent, children: [
+    { path: 'home', component: HomeNavComponent, children : [
+      { path : 'profile' , component: SecretComponent },
+      { path : 'jobs' , component: JobsComponent },
+      { path : 'settings' , component: SettingsComponent }
+    ] },
+  ]},
+  // { path: '', component: LoginComponent, canActivate: [AuthGuardService] , children: [
+  //   { path: 'home', component: SecretComponent, canActivate: [SecretGaurdService] },
+  // ]},
+  { path: '**', component: PageNotFoundComponent }
+
 ];
 
-@NgModule({
+@NgModule({ 
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })

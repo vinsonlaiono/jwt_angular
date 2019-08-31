@@ -1,0 +1,19 @@
+#home-nav{
+    border: solid .5px #DFDFDF;
+    border-radius: 4px;
+    padding: 10px
+}
+a {
+    text-decoration: none;
+    color: black;
+    display:inline-block;
+}
+a i {
+    font-size:25px; 
+    display:inline-block;
+}
+a p {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 8px;
+}
