@@ -37,7 +37,6 @@ export class LoginComponent implements OnInit {
       this.loggedInStatus = this.checkLogin();
       console.log("Logged in status: ", this.loggedInStatus);
       if(data) this._router.navigate(['/home', 'profile'])
-      
     });
   }
   logoutUser(){

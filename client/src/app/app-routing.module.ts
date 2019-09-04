@@ -17,6 +17,7 @@ const routes: Routes = [
       { path : 'settings' , component: SettingsComponent }
     ] },
   ]},
+  { path: 'home', pathMatch: 'full', redirectTo: '/home/profile' },
   // { path: '', component: LoginComponent, canActivate: [AuthGuardService] , children: [
   //   { path: 'home', component: SecretComponent, canActivate: [SecretGaurdService] },
   // ]},
