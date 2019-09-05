@@ -13,6 +13,7 @@ import { JobsComponent } from './components/jobs/jobs.component';
 import { HomeNavComponent } from './components/home-nav/home-nav.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { FooterComponent } from './components/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     JobsComponent,
     HomeNavComponent,
     SettingsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
