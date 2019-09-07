@@ -62,10 +62,11 @@
           </div>
       </span>   <!-- End of login button -->
 
-      <span *ngIf="loggedInStatus" class="navbar-text">
-          <button (click)="logoutUser()" class="p-3 text-light bg-dark" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span *ngIf="loggedInStatus" class="navbar-text">
+            <p>Welcome {{ user | json }}</p>
+            <button (click)="logoutUser()" class="p-3 text-light bg-dark" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fas fa-sign-out-alt"></i>Logout
-          </button>
+            </button>
       </span>
     </div>
   </div>

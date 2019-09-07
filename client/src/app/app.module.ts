@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from './auth.service';
+import { UserService } from './user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { SecretComponent } from './secret/secret.component';
 import { AuthGuardService } from './guards/auth-guard.service';
@@ -31,7 +32,7 @@ import { FooterComponent } from './components/footer/footer.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [AuthService, AuthGuardService],
+  providers: [AuthService, AuthGuardService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

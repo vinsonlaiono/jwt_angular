@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { UserService } from '../user.service';
 import { __core_private_testing_placeholder__ } from '@angular/core/testing';
 import { Router } from '@angular/router';
 
@@ -15,9 +16,11 @@ export class LoginComponent implements OnInit {
   public loginErrors : String =  null;
   public loginSuccess : String =  null;
   public loggedInStatus : Boolean = false;
+  public user : Object = null;
 
   constructor(
     private authServ : AuthService,
+    private userServ : UserService,
     private _router : Router
     ) { }
 
@@ -26,10 +29,11 @@ export class LoginComponent implements OnInit {
       'email': 'vaiono@gmail.com',
       'password' : '1234567890'
     }
+    
     this.loggedInStatus = this.checkLogin();
   }
   login(){
-    console.log(this.loginForm)
+    console.log("The form: ",this.loginForm)
     this.authServ.login(this.loginForm).subscribe( data => {
       console.log(data);
       this.resetAlerts();
@@ -39,6 +43,13 @@ export class LoginComponent implements OnInit {
       if(data) this._router.navigate(['/home', 'profile'])
     });
   }
+
+  getUserInfo(){
+    this.userServ.getUser().subscribe( (data) => {
+
+    })
+  }
+
   logoutUser(){
     console.log("Logging out...")
     this.authServ.logOutUser().subscribe( success => {

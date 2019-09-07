@@ -13,16 +13,17 @@ export class SecretComponent implements OnInit {
   constructor( private authService : AuthService, private _router:Router) { }
 
   ngOnInit() {
+    this.getUser()
   }
 
   logoutUser(){
     console.log("Logging out...")
     this.authService.logOutUser().subscribe( success => {
-      if (success) {
+      if(success) {
         console.log("Successfully logged out user...")
         this._router.navigate(['/']);
       }
     })
   }
-
+  getUser()
 }
