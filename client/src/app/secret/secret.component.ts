@@ -13,7 +13,6 @@ export class SecretComponent implements OnInit {
   constructor( private authService : AuthService, private _router:Router) { }
 
   ngOnInit() {
-    this.getUser()
   }
 
   logoutUser(){
@@ -25,5 +24,5 @@ export class SecretComponent implements OnInit {
       }
     })
   }
-  getUser()
+  
 }
