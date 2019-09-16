@@ -14,8 +14,9 @@
       <div class="row mt-4">
         <div class="col-sm-6">
           <div class="overflow-hidden">
-          <div class="card">
-            <ul *ngFor="let job of jobs" class="list-group list-group-flush">
+          <div class="card" id="jobs-list">
+            <!-- Start of for loop -->
+            <ul *ngFor="let job of jobs"  class="list-group list-group-flush">
               <li class="list-group-item">
                 <div (click)="setFocus(job)" class="row">
                   <div class="col-1 ">
@@ -30,6 +31,23 @@
               </li>
             </ul>
           </div>
+          <nav aria-label="Page navigation example" class="pt-4 text-center">
+              <ul class="pagination justify-content-center">
+                <li class="page-item">
+                  <a class="page-link" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li class="page-item"><a class="page-link">1</a></li>
+                <li class="page-item"><a class="page-link">2</a></li>
+                <li class="page-item"><a class="page-link">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
         <div class="col-sm-6">
@@ -46,8 +64,14 @@
                   <p class="card-text text-capitalize m-0 p-0">{{ focus.location }}</p>
                 </div>
               </div>
-              <div class="row">
+              <div class="row" id="job-description">
                   <p class="lead m-0 p-0 mt-4">Description</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, itaque fugiat magni dolorum amet eaque. Esse natus assumenda molestias, voluptatibus quisquam dicta repellendus atque harum obcaecati fugit consectetur! Atque, totam. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore nostrum debitis ab atque est. Veniam officiis blanditiis reprehenderit sapiente consequatur mollitia, hic fugiat architecto ullam praesentium labore pariatur exercitationem vel! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum repellendus veniam saepe exercitationem iste sunt vel quae quis error, ipsam porro soluta numquam, doloremque nostrum earum possimus optio magnam a.</p>
+                  <p class="lead m-0 p-0 mt-4">Job Details</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, itaque fugiat magni dolorum amet eaque. Esse natus assumenda molestias, voluptatibus quisquam dicta repellendus atque harum obcaecati fugit consectetur! Atque, totam. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore nostrum debitis ab atque est. Veniam officiis blanditiis reprehenderit sapiente consequatur mollitia, hic fugiat architecto ullam praesentium labore pariatur exercitationem vel! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum repellendus veniam saepe exercitationem iste sunt vel quae quis error, ipsam porro soluta numquam, doloremque nostrum earum possimus optio magnam a.</p>
+                  <p class="lead m-0 p-0 mt-4">Job Details</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, itaque fugiat magni dolorum amet eaque. Esse natus assumenda molestias, voluptatibus quisquam dicta repellendus atque harum obcaecati fugit consectetur! Atque, totam. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore nostrum debitis ab atque est. Veniam officiis blanditiis reprehenderit sapiente consequatur mollitia, hic fugiat architecto ullam praesentium labore pariatur exercitationem vel! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum repellendus veniam saepe exercitationem iste sunt vel quae quis error, ipsam porro soluta numquam, doloremque nostrum earum possimus optio magnam a.</p>
+                  <p class="lead m-0 p-0 mt-4">Job Details</p>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, itaque fugiat magni dolorum amet eaque. Esse natus assumenda molestias, voluptatibus quisquam dicta repellendus atque harum obcaecati fugit consectetur! Atque, totam. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore nostrum debitis ab atque est. Veniam officiis blanditiis reprehenderit sapiente consequatur mollitia, hic fugiat architecto ullam praesentium labore pariatur exercitationem vel! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum repellendus veniam saepe exercitationem iste sunt vel quae quis error, ipsam porro soluta numquam, doloremque nostrum earum possimus optio magnam a.</p>
                   <p class="lead m-0 p-0 mt-4">Job Details</p>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, itaque fugiat magni dolorum amet eaque. Esse natus assumenda molestias, voluptatibus quisquam dicta repellendus atque harum obcaecati fugit consectetur! Atque, totam. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore nostrum debitis ab atque est. Veniam officiis blanditiis reprehenderit sapiente consequatur mollitia, hic fugiat architecto ullam praesentium labore pariatur exercitationem vel! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum repellendus veniam saepe exercitationem iste sunt vel quae quis error, ipsam porro soluta numquam, doloremque nostrum earum possimus optio magnam a.</p>

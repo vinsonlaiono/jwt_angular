@@ -28,10 +28,17 @@
                   <p class="lead">Password</p>
                 </div>
                 <div class="col">
+                  <label for="">Current Password</label>
                   <input type="password" class="form-control mb-4 p-4" value="12345678901234567890">
+                  <label for="">New Password</label>
+                  <input type="password" class="form-control mb-4 p-4">
+                  <label for="">Confirm New Password</label>
+                  <input type="password" class="form-control mb-4 p-4">
+                  <input type="submit" class="btn btn-dark border border-light float-right  px-4 py-2" value="Update password">
                 </div>
               </div>
           </div>
+          
           <div class="border-bottom mb-4 pb-4">
             <div class="row">
                 <div class="col ">
@@ -41,7 +48,15 @@
                   <label for="">User Title</label>
                   <input type="text" class="form-control mb-4 p-4" value="Software Engineer">
                   <label for="">Status</label>
-                  <input type="text" class="form-control mb-4 p-4" value="Actively Interviewing">
+                  <div class="input-group mb-4  ">
+                      <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                        <option selected>Choose...</option>
+                        <option value="1">Passively Searching</option>
+                        <option value="2">Actively Applying</option>
+                        <option value="3">Actively Interviewing</option>
+                      </select>
+                      
+                    </div>
                   <label for="">Avatar</label>
                   <div class="custom-file">
                     <label class="custom-file-label" for="customFile">Choose file</label>

@@ -1,0 +1,9 @@
+#jobs-list, #job-description{
+    overflow: auto;
+}
+#jobs-list{
+    max-height: 762px;
+}
+#job-description{
+    max-height: 622px;
+}

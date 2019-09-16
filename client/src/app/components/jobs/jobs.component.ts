@@ -14,6 +14,9 @@ export class JobsComponent implements OnInit {
     {'title' : 'Jr Web Devleoper', 'company' : 'linkedin', 'location' : 'Sunnyvale'},
     {'title' : 'Azure Software Engineer', 'company' : 'microsoft', 'location' : 'Mountain View'},
     {'title' : 'Jr Web Devleoper', 'company' : 'github', 'location' : 'Sunnyvale'},
+    {'title' : 'Jr Web Devleoper', 'company' : 'linkedin', 'location' : 'Sunnyvale'},
+    {'title' : 'Azure Software Engineer', 'company' : 'microsoft', 'location' : 'Mountain View'},
+    {'title' : 'Jr Web Devleoper', 'company' : 'github', 'location' : 'Sunnyvale'},
   ]
 
   focus:Object = {
