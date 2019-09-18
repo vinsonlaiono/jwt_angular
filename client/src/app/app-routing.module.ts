@@ -8,13 +8,15 @@ import { JobsComponent } from './components/jobs/jobs.component';
 import { HomeNavComponent } from './components/home-nav/home-nav.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { StatsComponent } from './components/stats/stats.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent, children: [
     { path: 'home', component: HomeNavComponent, children : [
       { path : 'profile' , component: SecretComponent },
       { path : 'jobs' , component: JobsComponent },
-      { path : 'settings' , component: SettingsComponent }
+      { path : 'settings' , component: SettingsComponent },
+      { path : 'stats' , component: StatsComponent }
     ] },
   ]},
   { path: 'home', pathMatch: 'full', redirectTo: '/home/profile' },

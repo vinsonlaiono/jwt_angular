@@ -15,6 +15,7 @@ import { HomeNavComponent } from './components/home-nav/home-nav.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { StatsComponent } from './components/stats/stats.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,8 @@ import { FooterComponent } from './components/footer/footer.component';
     HomeNavComponent,
     SettingsComponent,
     PageNotFoundComponent,
-    FooterComponent
+    FooterComponent,
+    StatsComponent
   ],
   imports: [
     BrowserModule,
