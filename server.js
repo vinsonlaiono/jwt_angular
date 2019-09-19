@@ -18,7 +18,6 @@ const passportOpts = {
   secretOrKey: SECRET
 };
 
-// 
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(cors());
