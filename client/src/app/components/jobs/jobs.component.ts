@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../user.service';
 
 @Component({
   selector: 'app-jobs',
@@ -18,21 +19,36 @@ export class JobsComponent implements OnInit {
     {'title' : 'Azure Software Engineer', 'company' : 'microsoft', 'location' : 'Mountain View'},
     {'title' : 'Jr Web Devleoper', 'company' : 'github', 'location' : 'Sunnyvale'},
   ]
-
+  searchOptions:any = {"description":"", "location":"" };
   focus:Object = {
     'title' : '',
     'company' : '',
-    'location' : ''
+    'location' : '',
+    'company_logo' : ''
   }
 
-  constructor() { }
+  constructor(
+    private _httpService : UserService
+    ) { }
 
   ngOnInit() {
+    this.getAllJobs();
     this.focus = this.jobs[0];
   }
 
   setFocus(job){
+    console.log("Selected Job: ", job)
     this.focus = job;
+  }
+
+  getAllJobs(){
+    console.log("Search Options in component", this.searchOptions)
+    this._httpService.getJobs(this.searchOptions).subscribe( data => {
+      console.log("List of jobs from Github API: ", data)
+      this.jobs = data;
+      this.focus = this.jobs[0];
+
+    })
   }
 
 }

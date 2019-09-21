@@ -9,5 +9,5 @@ var UserSchema = new mongoose.Schema({
     email: { type: String, required: true, unique:true },
     password: { type: String, required: [true, "password is required"] },
 }, { timestamps: true });
-UserSchema.plugin(uniqueValidator, {message: 'Email is already taken'});
+UserSchema.plugin(uniqueValidator, { message: 'Email is already taken' });
 mongoose.model('User', UserSchema);

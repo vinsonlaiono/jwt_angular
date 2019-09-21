@@ -9,14 +9,12 @@ module.exports = function(app){
     app.get('/api/authenticate/user', (req, res) => {
         res.json({'message': 'got user'});
     });
-
     app.post('/api/users/new', (req, res) => {
         apiTest.createNewUser(req, res);
     })
     app.get('/api/users', (req, res) =>{
         apiTest.getAllUsers(req, res);
     })
-
     app.post('/login', (req, res) => {
         process.login(req, res);
     })
@@ -26,8 +24,6 @@ module.exports = function(app){
     app.post('/refresh', (req, res) => {
         process.refresh(req, res);
     })
-
-
     // Using ng serve instead
     // app.all("*", (req, res, next) => {
     //     res.sendFile(path.resolve("./client/dist/client/index.html"))

@@ -1,9 +1,19 @@
-#jobs-list, #job-description{
+#jobs-list, #job-description {
     overflow: auto;
 }
-#jobs-list{
+#jobs-list {
     max-height: 762px;
 }
-#job-description{
+#job-description {
     max-height: 622px;
+}
+.focus {
+    text-align: center;
+}
+.focus i {
+    font-size: 50px;
+    
+}
+.focus img {
+    width: 100px; margin-right:10px;
 }
