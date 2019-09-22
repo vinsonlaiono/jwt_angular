@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { config } from './config/config'
+
 import { getDefaultService } from 'selenium-webdriver/opera';
 
 @Injectable({
@@ -35,6 +37,9 @@ export class UserService {
 
     console.log("Seach url: ", jobsApiUrl)
     return this._http.get(`${jobsApiUrl}`, {headers:headers})
+  }
+  addJobToList(job){
+    return this._http.post<any>(`${config.apiUrl}/api/users/jobs`, job)
   }
 
 }

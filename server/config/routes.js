@@ -1,5 +1,6 @@
 const process = require('../controllers/authentication/authenticate');
 const apiTest = require('../controllers/api-test/api-test');
+const jobs = require('../controllers/jobs/jobs');
 const path = require('path');
 
 module.exports = function(app){
@@ -14,6 +15,9 @@ module.exports = function(app){
     })
     app.get('/api/users', (req, res) =>{
         apiTest.getAllUsers(req, res);
+    })
+    app.post('/api/users/jobs', (req, res) => {
+        jobs.addToJobList(req, res);
     })
     app.post('/login', (req, res) => {
         process.login(req, res);

@@ -6,7 +6,6 @@ module.exports = {
             if(err){
                 res.json({'err' : err})
             }else {
-
                 res.json({'users' : users})
             }
         })
@@ -16,10 +15,8 @@ module.exports = {
         let newUser = new User(req.body);
         newUser.save( (err, user) => {
             if(err){
-
                 res.json({'err': err})
             } else {
-
                 res.json({'user': user})
             }
         })

@@ -18,14 +18,12 @@
           <div class="overflow-hidden">
           <div class="card" id="jobs-list">
             <!-- Start of for loop -->
-            
             <ul *ngFor="let job of jobs"  class="list-group list-group-flush">
               <li class="list-group-item">
                 <div (click)="setFocus(job)" class="row ">
                   <div class="col-2 " id="focus" style="text-align: center;">
                     <img src="{{ job.company_logo}}" alt="" style="width: 50px; margin-right:10px;">
                     <i *ngIf="!job.company_logo" class="fas fa-fire" style="font-size: 50px;"></i>
-
                   </div>
                   <div class="col">
                     <a class="lead"><h4>{{ job.title}}</h4></a>
@@ -63,19 +61,26 @@
                 <div class="col-2 focus">
                     <i *ngIf="!focus.company_logo" class="fas fa-fire mt-4"></i>
                     <img src="{{ focus.company_logo}}" alt="">
-
                 </div>
                 <div class="col">
-                  <a class="btn btn-dark float-right text-white">Apply</a>
+                  <a href="{{ focus.url }}" target="_blank" class="btn btn-dark float-right text-white">Apply</a>
                   <h5 class="card-title text-capitalize">{{ focus.title }}</h5>
                   <p class="card-text text-capitalize m-0 p-0">{{ focus.company }}</p>
                   <p class="card-text text-capitalize m-0 p-0">{{ focus.location }}</p>
+                  <span class="text-muted">Job posted: {{ focus.created_at }}</span>
                 </div>
               </div>
-              <div class="row" id="job-description">
-                  <p class="lead m-0 p-0 pl-4 mt-4">Description</p>
-                  <p class="p-4" [innerHTML]="focus.description"></p>
-                </div>
+              <div class="row">
+                <p class="col-9 lead m-0 p-0 pl-2 mt-2">Description</p>
+                <button (click)="addJobToList()"  class="col-3  btn btn-info py-0">
+                  <i class="fas fa-plus pr-2" style="font-size:20px; vertical-align:middle"></i>
+                  Add to my list
+                </button>
+              </div>
+              <div class="row mt-4" id="job-description">
+                <p class="px-4" [innerHTML]="focus.description"></p>
+              </div>
+              <p class="mt-4" [innerHTML]="focus.how_to_apply"></p>
             </div>
           </div>
         </div>
