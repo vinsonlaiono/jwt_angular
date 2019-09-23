@@ -22,6 +22,7 @@ export class AuthService {
       .pipe(
         tap(tokens => {
           console.log("Tokens from tap: ", tokens);
+          localStorage.setItem("user", user.username)
           this.doLoginUser(user.username, tokens);
         }),
         mapTo(true),

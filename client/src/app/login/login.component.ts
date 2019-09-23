@@ -40,6 +40,7 @@ export class LoginComponent implements OnInit {
       data === true ? this.loginSuccess = "Successfully logged in user..." : this.loginErrors =  "Failed to log in..."
       this.loggedInStatus = this.checkLogin();
       console.log("Logged in status: ", this.loggedInStatus);
+      localStorage.setItem("user" , this.loginForm.email)
       if(data) this._router.navigate(['/home', 'profile'])
     });
   }

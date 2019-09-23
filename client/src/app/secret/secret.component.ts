@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { Chart } from 'chart.js';
 
@@ -10,8 +11,8 @@ import { Chart } from 'chart.js';
   styleUrls: ['./secret.component.css']
 })
 export class SecretComponent implements OnInit {
-
-  LineChart = [];
+  user:any;
+  LineChart:Array<Object> = [];
   jobs:any = [
     {'id' : '1', 'status':'Applied', 'title' : 'Azure Software Engineer', 'company' : 'microsoft', 'location' : 'Mountain View'},
     {'id' : '2', 'status':'Phone screen', 'title' : 'Software Engineer', 'company' : 'facebook', 'location' : 'Menlo Park'},
@@ -23,10 +24,13 @@ export class SecretComponent implements OnInit {
     {'id' : '8', 'status':'Round 1', 'title' : 'Azure Software Engineer', 'company' : 'microsoft', 'location' : 'Mountain View'},
     {'id' : '9', 'status':'applied', 'title' : 'Jr Web Devleoper', 'company' : 'github', 'location' : 'Sunnyvale'},
   ]
-  constructor( private authService : AuthService, private _router:Router) { }
+  constructor( 
+    private authService : AuthService, 
+    private _router:Router,
+    private _userService : UserService) { }
 
   ngOnInit() {
-    this.getDate();
+    this.getLoggedUser();
 
     this.LineChart = new Chart('lineChart', {
       type : 'line',
@@ -57,10 +61,10 @@ export class SecretComponent implements OnInit {
       }
     })
   }
-  
-  getDate(){
-    let date = new Date().toString();
-    let d = date.split(' ')
-    console.log(d);
+  getLoggedUser(){
+    this._userService.getUser(localStorage.user).subscribe( data => {
+      console.log(data)
+      this.user = data['user'];
+    })
   }
 }

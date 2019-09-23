@@ -21,7 +21,7 @@ module.exports = {
                     const token = jwt.sign(user, SECRET, { expiresIn: 600 }) 
                     const refreshToken = randtoken.uid(256);
                     refreshTokens[refreshToken] = email;
-                    res.json({jwt: token, refreshToken: refreshToken});
+                    res.json({jwt: token, refreshToken: refreshToken, user_id: user.id});
                 }
             }
         })

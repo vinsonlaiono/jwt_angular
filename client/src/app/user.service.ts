@@ -11,8 +11,8 @@ export class UserService {
 
   constructor(private _http : HttpClient) { }
   
-  getUser(){
-    return this._http.get('/api/user/:email')
+  getUser(email){
+    return this._http.get(`${config.apiUrl}/api/user/${email}`)
   }
   getJobs(filters){
     console.log('In get jobs function in service file')

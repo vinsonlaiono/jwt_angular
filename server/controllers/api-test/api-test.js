@@ -20,5 +20,14 @@ module.exports = {
                 res.json({'user': user})
             }
         })
+    },
+    'getOneUser': function(req, res) {
+        User.findOne({email: req.params.email} , (err, user) => {
+            if(err){
+                res.json({'err': err})
+            } else {
+                res.json({'user': user})
+            }
+        })
     }
 }

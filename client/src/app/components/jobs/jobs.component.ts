@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../user.service';
 declare let alertify:any;
-
+// Set alertify defaults to bootstrap theme
+alertify.defaults.transition = "slide";
+alertify.defaults.theme.ok = "btn btn-primary";
+alertify.defaults.theme.cancel = "btn btn-danger";
+alertify.defaults.theme.input = "form-control";
+alertify.defaults.notifier.position = "top-center"
 @Component({
   selector: 'app-jobs',
   templateUrl: './jobs.component.html',
@@ -37,6 +42,7 @@ export class JobsComponent implements OnInit {
   ngOnInit() {
     this.getAllJobs();
     this.focus = this.jobs[0];
+    console.log(localStorage)
   }
 
   setFocus(job){
@@ -49,13 +55,27 @@ export class JobsComponent implements OnInit {
     this._httpService.getJobs(this.searchOptions).subscribe( data => {
       console.log("List of jobs from Github API: ", data)
       this.jobs = data;
-      this.focus = this.jobs[0];
+      this.setFocus(this.jobs[0]);
     })
   }
 
   addToListAlert(){
     console.log("Click alertify")
-    alertify.success("Great")
+    alertify.confirm('Are you sure you want to add this job to your list?', function(){ 
+      alertify.success(`Successfully saved this job to your list.`)
+    }, function(){ alertify.error('Cancel')})
+    .set('notifier','position', 'top-center')
+    .setHeader("<h4>Adding to your List</h4>")
+  }
+
+  alertApplyLink(){
+    alertify.confirm("Leaving MyApps")
+    .setHeader("Leaving MyApps")
+    .moveTo(1000,310);   
+  }
+
+  closeAlert(){
+    alertify.confirm().close();
   }
   addJobToList(){
     

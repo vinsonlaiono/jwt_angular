@@ -16,6 +16,9 @@ module.exports = function(app){
     app.get('/api/users', (req, res) =>{
         apiTest.getAllUsers(req, res);
     })
+    app.get('/api/user/:email', (req, res) => {
+        apiTest.getOneUser(req, res)
+    })
     app.post('/api/users/jobs', (req, res) => {
         jobs.addToJobList(req, res);
     })
