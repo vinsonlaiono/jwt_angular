@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { AuthService } from '../auth.service';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { Chart } from 'chart.js';
 
+declare let alertify : any;
 
 @Component({
   selector: 'app-secret',
@@ -11,6 +12,7 @@ import { Chart } from 'chart.js';
   styleUrls: ['./secret.component.css']
 })
 export class SecretComponent implements OnInit {
+
   user:any;
   LineChart:Array<Object> = [];
   jobs:any = [
@@ -31,6 +33,10 @@ export class SecretComponent implements OnInit {
 
   ngOnInit() {
     this.getLoggedUser();
+    this.user = {
+      'first_name':'',
+      'last_name': ''
+    }
 
     this.LineChart = new Chart('lineChart', {
       type : 'line',
@@ -61,10 +67,30 @@ export class SecretComponent implements OnInit {
       }
     })
   }
+
   getLoggedUser(){
     this._userService.getUser(localStorage.user).subscribe( data => {
       console.log(data)
       this.user = data['user'];
     })
+  }
+  removeFromList(job){
+    console.log(job, localStorage.user)
+    this._userService.removeJobFromList(job, localStorage.user).subscribe( data => {
+      console.log(data);
+      this.getLoggedUser();
+    })
+  }
+  showJobDetails(job){
+    console.log(job)
+    alertify.alert()
+    .setting({
+      'label':'Close',
+      'message': `
+      <h4>${job.company}</h4>
+      <p>${job.description} </p>
+      `
+    }).show()
+    .setHeader(`${job.company}`)
   }
 }

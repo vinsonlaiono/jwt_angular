@@ -63,7 +63,7 @@
                     <img src="{{ focus.company_logo}}" alt="">
                 </div>
                 <div class="col">
-                  <a (mouseenter)="alertApplyLink()" href="{{ focus.url }}" target="_blank" class="btn btn-dark float-right text-white">Apply</a>
+                  <a href="{{ focus.url }}" target="_blank" class="btn btn-dark float-right text-white">Apply</a>
                   <h5 class="card-title text-capitalize">{{ focus.title }}</h5>
                   <p class="card-text text-capitalize m-0 p-0">{{ focus.company }}</p>
                   <p class="card-text text-capitalize m-0 p-0">{{ focus.location }}</p>
@@ -72,7 +72,7 @@
               </div>
               <div class="row">
                 <p class="col-9 lead m-0 p-0 pl-2 mt-2">Description</p>
-                <button (click)="addToListAlert()"   class="col-3  btn btn-info py-0">
+                <button (click)="addToListAlert(); addJobToList()"   class="col-3  btn btn-info py-0">
                   <i class="fas fa-plus pr-2" style="font-size:20px; vertical-align:middle"></i>
                   Add to my list
                 </button>

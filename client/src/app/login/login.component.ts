@@ -45,11 +45,11 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  getUserInfo(){
-    this.userServ.getUser().subscribe( (data) => {
+  // getUserInfo(){
+  //   this.userServ.getUser().subscribe( (data) => {
 
-    })
-  }
+  //   })
+  // }
 
   logoutUser(){
     console.log("Logging out...")

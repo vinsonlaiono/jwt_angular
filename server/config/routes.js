@@ -19,8 +19,11 @@ module.exports = function(app){
     app.get('/api/user/:email', (req, res) => {
         apiTest.getOneUser(req, res)
     })
-    app.post('/api/users/jobs', (req, res) => {
+    app.post('/api/users/jobs/:email', (req, res) => {
         jobs.addToJobList(req, res);
+    })
+    app.delete('/api/users/:email/jobs/:job_id', (req, res) => {
+        jobs.removeJobFromList(req, res);
     })
     app.post('/login', (req, res) => {
         process.login(req, res);

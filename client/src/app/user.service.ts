@@ -38,8 +38,11 @@ export class UserService {
     console.log("Seach url: ", jobsApiUrl)
     return this._http.get(`${jobsApiUrl}`, {headers:headers})
   }
-  addJobToList(job){
-    return this._http.post<any>(`${config.apiUrl}/api/users/jobs`, job)
+  addJobToList(job, email){
+    return this._http.post<any>(`${config.apiUrl}/api/users/jobs/${email}`, job)
+  }
+  removeJobFromList(job, email){
+    return this._http.delete(`${config.apiUrl}/api/users/${email}/jobs/${job._id}`)
   }
 
 }

@@ -35,6 +35,7 @@ export class JobsComponent implements OnInit {
     'company_logo' : ''
   }
   user:any;
+  loggedUser:any = localStorage.user;
   constructor(
     private _httpService : UserService
     ) { }
@@ -78,11 +79,10 @@ export class JobsComponent implements OnInit {
     alertify.confirm().close();
   }
   addJobToList(){
-    
-    console.log(this.focus)
-    this._httpService.addJobToList(this.focus).subscribe( data => {
+    // console.log(this.focus)
+    this._httpService.addJobToList(this.focus, this.loggedUser).subscribe( data => {
       console.log(data);
     })
   }
-
+  
 }
