@@ -27,14 +27,12 @@ module.exports = {
                 console.log("Success")
                 for( var i = 0; i < user.jobs.length; i++){ 
                     if ( user.jobs[i]._id == req.params.job_id) {
-                        console.log(user.jobs[i])
                         user.jobs.splice(i, 1); 
-                        console.log(user.jobs)
                     }
                  }
                 user.save()
                 res.json({'message':'Successfully removed a job', 'user': user})
             }
         })
-    }
+    }       
 }

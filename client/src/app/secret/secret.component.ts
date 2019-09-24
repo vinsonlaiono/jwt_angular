@@ -12,7 +12,7 @@ declare let alertify : any;
   styleUrls: ['./secret.component.css']
 })
 export class SecretComponent implements OnInit {
-
+  showdelete:Boolean = false;
   user:any;
   LineChart:Array<Object> = [];
   jobs:any = [
@@ -91,6 +91,6 @@ export class SecretComponent implements OnInit {
       <p>${job.description} </p>
       `
     }).show()
-    .setHeader(`${job.company}`)
+    .setHeader(`<img src="${ job.company_logo }" alt="" style="width: 40px; margin-right:10px;"> ${job.company}`)
   }
 }
