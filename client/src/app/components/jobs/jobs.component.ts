@@ -6,7 +6,8 @@ alertify.defaults.transition = "slide";
 alertify.defaults.theme.ok = "btn btn-primary";
 alertify.defaults.theme.cancel = "btn btn-danger";
 alertify.defaults.theme.input = "form-control";
-alertify.defaults.notifier.position = "top-center"
+alertify.defaults.notifier.position = "top-center";
+
 @Component({
   selector: 'app-jobs',
   templateUrl: './jobs.component.html',
@@ -64,9 +65,12 @@ export class JobsComponent implements OnInit {
     console.log("Click alertify")
     alertify.confirm('Are you sure you want to add this job to your list?', function(){ 
       alertify.success(`Successfully saved this job to your list.`)
-    }, function(){ alertify.error('Cancel')})
+    }, function(){ 
+      alertify.error('Cancel')
+    })
     .set('notifier','position', 'top-center')
     .setHeader("<h4>Adding to your List</h4>")
+    .setting({'onok': this.addJobToList()})
   }
 
   alertApplyLink(){
@@ -75,9 +79,6 @@ export class JobsComponent implements OnInit {
     .moveTo(1000,310);   
   }
 
-  closeAlert(){
-    alertify.confirm().close();
-  }
   addJobToList(){
     // console.log(this.focus)
     this._httpService.addJobToList(this.focus, this.loggedUser).subscribe( data => {
