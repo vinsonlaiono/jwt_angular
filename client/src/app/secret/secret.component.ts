@@ -25,15 +25,15 @@ export class SecretComponent implements OnInit {
   user:any;
   LineChart:Array<Object> = [];
   jobs:any = [
-    {'id' : '1', 'status':'Applied', 'title' : 'Azure Software Engineer', 'company' : 'microsoft', 'location' : 'Mountain View'},
-    {'id' : '2', 'status':'Phone screen', 'title' : 'Software Engineer', 'company' : 'facebook', 'location' : 'Menlo Park'},
-    {'id' : '3', 'status':'Round 1', 'title' : 'Jr Web Devleoper', 'company' : 'apple', 'location' : 'Sunnyvale'},
-    {'id' : '4', 'status':'Applied', 'title' : 'Jr Web Devleoper', 'company' : 'linkedin', 'location' : 'Sunnyvale'},
-    {'id' : '5', 'status':'Phone screen', 'title' : 'Azure Software Engineer', 'company' : 'microsoft', 'location' : 'Mountain View'},
-    {'id' : '6', 'status':'Phone screen', 'title' : 'Jr Web Devleoper', 'company' : 'github', 'location' : 'Sunnyvale'},
-    {'id' : '7', 'status':'applied', 'title' : 'Jr Web Devleoper', 'company' : 'linkedin', 'location' : 'Sunnyvale'},
-    {'id' : '8', 'status':'Round 1', 'title' : 'Azure Software Engineer', 'company' : 'microsoft', 'location' : 'Mountain View'},
-    {'id' : '9', 'status':'applied', 'title' : 'Jr Web Devleoper', 'company' : 'github', 'location' : 'Sunnyvale'},
+    // {'id' : '1', 'status':'Applied', 'title' : 'Azure Software Engineer', 'company' : 'microsoft', 'location' : 'Mountain View'},
+    // {'id' : '2', 'status':'Phone screen', 'title' : 'Software Engineer', 'company' : 'facebook', 'location' : 'Menlo Park'},
+    // {'id' : '3', 'status':'Round 1', 'title' : 'Jr Web Devleoper', 'company' : 'apple', 'location' : 'Sunnyvale'},
+    // {'id' : '4', 'status':'Applied', 'title' : 'Jr Web Devleoper', 'company' : 'linkedin', 'location' : 'Sunnyvale'},
+    // {'id' : '5', 'status':'Phone screen', 'title' : 'Azure Software Engineer', 'company' : 'microsoft', 'location' : 'Mountain View'},
+    // {'id' : '6', 'status':'Phone screen', 'title' : 'Jr Web Devleoper', 'company' : 'github', 'location' : 'Sunnyvale'},
+    // {'id' : '7', 'status':'applied', 'title' : 'Jr Web Devleoper', 'company' : 'linkedin', 'location' : 'Sunnyvale'},
+    // {'id' : '8', 'status':'Round 1', 'title' : 'Azure Software Engineer', 'company' : 'microsoft', 'location' : 'Mountain View'},
+    // {'id' : '9', 'status':'applied', 'title' : 'Jr Web Devleoper', 'company' : 'github', 'location' : 'Sunnyvale'},
   ]
   constructor( 
     private authService : AuthService, 
