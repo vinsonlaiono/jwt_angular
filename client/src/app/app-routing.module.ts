@@ -9,9 +9,13 @@ import { HomeNavComponent } from './components/home-nav/home-nav.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { StatsComponent } from './components/stats/stats.component';
+import { LandingComponent } from './components/landing/landing.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent, children: [
+  { path: '', pathMatch: 'full', redirectTo: '/myapps' },
+  { path: '', component: LandingComponent, children: [
+    { path: 'myapps', component : LandingPageComponent },
     { path: 'home', component: HomeNavComponent, children : [
       { path : 'profile' , component: SecretComponent },
       { path : 'jobs' , component: JobsComponent },

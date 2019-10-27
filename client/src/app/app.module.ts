@@ -16,6 +16,8 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { StatsComponent } from './components/stats/stats.component';
+import { LandingComponent } from './components/landing/landing.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,9 @@ import { StatsComponent } from './components/stats/stats.component';
     SettingsComponent,
     PageNotFoundComponent,
     FooterComponent,
-    StatsComponent
+    StatsComponent,
+    LandingComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,

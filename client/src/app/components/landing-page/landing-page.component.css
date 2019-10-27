@@ -1,0 +1,12 @@
+.landing-left, .landing-right{
+    height:900px
+}
+.landing-left{
+    background-color: #EEF0FF;
+}
+.landing-right{
+    background-color:white;
+}
+.font{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
