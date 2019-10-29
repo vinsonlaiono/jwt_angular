@@ -23,7 +23,7 @@ alertify.defaults.theme.cancel = "ui black button";
 export class SecretComponent implements OnInit {
   showdelete:Boolean = false;
   user:any;
-  LineChart:Array<Object> = [];
+  MonthChart:Array<Object> = [];
   jobs:any = [
     // {'id' : '1', 'status':'Applied', 'title' : 'Azure Software Engineer', 'company' : 'microsoft', 'location' : 'Mountain View'},
     // {'id' : '2', 'status':'Phone screen', 'title' : 'Software Engineer', 'company' : 'facebook', 'location' : 'Menlo Park'},
@@ -47,22 +47,35 @@ export class SecretComponent implements OnInit {
       'last_name': ''
     }
 
-    this.LineChart = new Chart('lineChart', {
+    this.MonthChart = new Chart('monthChart', {
       type : 'line',
       data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
         datasets: [{
-            label: 'Current Week',
+            label: 'Week 1',
             //backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 50, 20, 20, 30, 32]
+            data: [0, 10, 10, 20, 20, 30, 32]
         }, 
         {
-          label: 'Previous Week',
+          label: 'Week 2',
           //backgroundColor: 'rgb(255, 99, 132)',
           borderColor: 'rgb(25, 99, 132)',
-          data: [10, 0, 30, 40, 20, 35, 22]
-      }]
+          data: [10, 0, 30, 10, 20, 15, 22]
+        },
+        {
+          label: 'Week 3',
+          //backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(22, 39, 132)',
+          data: [1, 0, 14, 30, 10, 15, 12]
+        },
+        {
+          label: 'Week 4',
+          //backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(25, 49, 412)',
+          data: [3, 10, 30, 13, 23, 33, 32]
+        },
+      ]
     },
     })
   }
@@ -85,11 +98,12 @@ export class SecretComponent implements OnInit {
   }
 
   alertRemoveFromJob(job){
-    alertify.confirm('Are you sure you want to remove this job to your list?', function(){ 
-      alertify.success(`Successfully removed this job from your list.`)
-    }, function(){alertify.error('Cancel')})
-    .setHeader("<h4 class='display-4'>Remove from your List</h4>")
-    .set('onok', this.removeFromList(job))
+    this.removeFromList(job)
+    // alertify.confirm('Are you sure you want to remove this job to your list?', function(){ 
+    //   alertify.success(`Successfully removed this job from your list.`)
+    // }, function(){alertify.error('Cancel')})
+    // .setHeader("<h4 class='display-4'>Remove from your List</h4>")
+    // .set('onok', this.removeFromList(job))
   }
   alertTest(job){
     alertify.confirm('a callback will be invoked on ok.', function(){

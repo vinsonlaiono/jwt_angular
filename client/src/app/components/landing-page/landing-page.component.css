@@ -43,8 +43,6 @@
 .landing-input, .landing-btn{
     display: inline-block;
 }
-.landing-card p i{
+.landing-card i{
     font-size: 70px;
-}
-.landing-card p{
 }
