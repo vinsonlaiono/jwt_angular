@@ -18,6 +18,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { StatsComponent } from './components/stats/stats.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { TrackedJobsComponent } from './components/tracked-jobs/tracked-jobs.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
     FooterComponent,
     StatsComponent,
     LandingComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    TrackedJobsComponent
   ],
   imports: [
     BrowserModule,

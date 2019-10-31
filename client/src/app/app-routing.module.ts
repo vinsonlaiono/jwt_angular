@@ -11,6 +11,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { StatsComponent } from './components/stats/stats.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { TrackedJobsComponent } from './components/tracked-jobs/tracked-jobs.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/myapps' },
@@ -19,6 +20,7 @@ const routes: Routes = [
     { path: 'home', component: HomeNavComponent, children : [
       { path : 'profile' , component: SecretComponent },
       { path : 'jobs' , component: JobsComponent },
+      { path : 'tracked-jobs' , component: TrackedJobsComponent },
       { path : 'settings' , component: SettingsComponent },
       { path : 'stats' , component: StatsComponent }
     ] },

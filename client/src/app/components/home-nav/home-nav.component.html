@@ -9,8 +9,14 @@
     </li>
     <li class="nav-item">
       <a class="nav-link" [routerLink] = "['/home', 'jobs']">
+        <i class="fas fa-search mr-2"></i>
+        <p>Search Jobs</p>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink] = "['/home', 'tracked-jobs']">
         <i class="fas fa-briefcase mr-2"></i>
-        <p>Jobs</p>
+        <p>My Tracked Jobs</p>
       </a>
     </li>
     <li class="nav-item">
@@ -37,6 +43,7 @@
   </ul>
 </div>
 <div class="container col-10 mt-4">
-
+  
   <router-outlet></router-outlet>
+  
 </div>

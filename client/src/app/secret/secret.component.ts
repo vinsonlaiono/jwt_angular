@@ -99,11 +99,11 @@ export class SecretComponent implements OnInit {
 
   alertRemoveFromJob(job){
     this.removeFromList(job)
-    // alertify.confirm('Are you sure you want to remove this job to your list?', function(){ 
-    //   alertify.success(`Successfully removed this job from your list.`)
-    // }, function(){alertify.error('Cancel')})
-    // .setHeader("<h4 class='display-4'>Remove from your List</h4>")
-    // .set('onok', this.removeFromList(job))
+    alertify.confirm('Are you sure you want to remove this job to your list?', function(){ 
+      alertify.success(`Successfully removed this job from your list.`)
+    }, function(){alertify.error('Cancel')})
+    .setHeader("<h4 class='display-4'>Remove from your List</h4>")
+    .set('onok', this.removeFromList(job))
   }
   alertTest(job){
     alertify.confirm('a callback will be invoked on ok.', function(){
