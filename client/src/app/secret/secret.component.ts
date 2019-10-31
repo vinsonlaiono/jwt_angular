@@ -92,7 +92,7 @@ export class SecretComponent implements OnInit {
 
   getLoggedUser(){
     this._userService.getUser(localStorage.user).subscribe( data => {
-      console.log(data)
+      console.log("Logged in user: ", data)
       this.user = data['user'];
     })
   }
@@ -136,5 +136,8 @@ export class SecretComponent implements OnInit {
     }).show()
     .setHeader(`<img src="${ job.company_logo }" alt="" style="width: 40px; margin-right:10px;"> ${job.company}`)
     .set('resizable',true).resizeTo('60%','60%'); 
+  }
+  printing(){
+    console.log("this is th eonly print")
   }
 }
